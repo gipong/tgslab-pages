@@ -1,0 +1,115 @@
+html, body, header, #world {
+    height: 100%;
+}
+
+body {
+    font-family: "Arvo", sans-serif;
+}
+
+.collapse.in{
+    display:block !important;
+    float: left;
+    width: 100%;
+}
+
+.mask {
+    bottom: 15px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+#world {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(#f4f4f4, #3C4654);
+}
+
+#world canvas {
+    position: absolute;
+}
+
+.logo {
+    width: 130px;
+}
+
+.hr-divider {
+    border-top: 5px solid #fff;
+}
+
+.subwhite {
+    color: rgba(197,197,197,0.81);
+    word-break: break-all;
+}
+
+.twhite {
+    color: #b3cde0;
+}
+
+a {
+    color: #3b567a;
+}
+
+section {
+    margin-top: 123px;
+}
+
+.card {
+    margin: 10px;
+}
+
+p {
+    word-break: break-all;
+}
+
+.footer-img {
+    width: 130px;
+    height: 97.5px;
+    margin: 10px auto;
+}
+
+.paper-img {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.buttom-space {
+    margin-bottom: 35px;
+}
+
+#navbar {
+    transition: all 0.5s ease 0s;
+}
+
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 10px;
+    background: #f0d770;
+    transition: width .7s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.line-underline {
+    margin: 5px auto;
+    height: 5px;
+    background-color: #f0d770;
+    width: 75px;
+}
+
+footer {
+    margin-top: 40px;
+    background-color: #3b567a;
+    color: #fff;
+}
