@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TGeoSource_Lab</title>
+    <meta name="description" content="Taiwan Geospatial Open Source Lab (TGeoSource Lab) aims to promote open source and the development of free software on geospatial technologies, mainly in the fields of photogrammetry, remote sensing, and GIS.">
+    <meta name="author" content="Gipong">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
+</head>
+<body>
+<header>
+    {{> partials/navbar }}
+
+    {{> partials/world }}
+
+</header>
+<main>
+    <div class="container">
+        {{> partials/section-about }}
+
+        <hr class="my-5">
+        {{> partials/section-people }}
+
+        <hr class="my-5">
+        {{> partials/section-project }}
+
+        <hr class="my-5">
+        {{> partials/section-training }}
+
+        <hr class="my-5">
+        {{> partials/section-publications }}
+
+        <hr class="my-5">
+        {{> partials/section-resources }}
+
+        <hr class="my-5">
+        {{> partials/section-other }}
+
+    </div>
+</main>
+<footer class="container-fluid">
+    {{> partials/footerContent }}
+
+</footer>
+</body>
+<script src="./bundle.js"></script>
+</html>
