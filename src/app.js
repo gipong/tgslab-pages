@@ -257,6 +257,7 @@ let Satellite = function() {
     bar.receiveShadow = true;
     this.mesh.add(bar);
 
+    this.rightSideSet = new THREE.Object3D();
     for(let i=0; i<3; i++) {
         let geoRight = new THREE.BoxGeometry(10, 100, 35, 2, 1, 1);
         let matRight = new THREE.MeshPhongMaterial({color: colorSet.blue});
@@ -265,9 +266,11 @@ let Satellite = function() {
         rightSide.rotation.z = -Math.PI/4;
         rightSide.castShadow = true;
         rightSide.receiveShadow = true;
-        this.mesh.add(rightSide);
+        this.rightSideSet.add(rightSide);
     }
+    this.mesh.add(this.rightSideSet);
 
+    this.leftSideSet = new THREE.Object3D();
     for(let i=0; i<3; i++) {
         let geoLeft = new THREE.BoxGeometry(10, 100, 35, 2, 1, 1);
         let matLeft = new THREE.MeshPhongMaterial({color: colorSet.blue});
@@ -276,8 +279,9 @@ let Satellite = function() {
         leftSide.rotation.z = -Math.PI/6;
         leftSide.castShadow = true;
         leftSide.receiveShadow = true;
-        this.mesh.add(leftSide);
+        this.leftSideSet.add(leftSide);
     }
+    this.mesh.add(this.leftSideSet);
 
 };
 
@@ -295,6 +299,8 @@ function loop() {
     satellite.mesh.rotation.y += speed*0.006;
     satellite.mesh.position.y = normalize(mousePos.y, -1, 1, 80, 150);
     satellite.mesh.position.x = normalize(mousePos.x, -1, 1, -80, 80);
+    satellite.rightSideSet.rotation.z += wspeed*Math.random();
+    satellite.leftSideSet.rotation.z -= wspeed*Math.random();
 
     sphere.mesh.rotation.z += .001;
     galaxy.mesh.rotation.z += .005;
@@ -308,6 +314,7 @@ let mousePos = {
     x: 0, y: 0
 };
 let speed = 1;
+let wspeed = 0;
 
 function handleMouseMove(evt) {
     let tx = -1 + (evt.clientX/WIDTH)*2;
@@ -319,7 +326,8 @@ function handleMouseMove(evt) {
 
 function rotateSatellite() {
     speed = 10;
-    window.setTimeout(()=>{speed = 1;}, 750);
+    window.setTimeout(()=>{speed = 1; wspeed = 0.08;}, 750);
+    window.setTimeout(()=>{wspeed = 0;}, 1750);
 }
 
 function normalize(pos, min, max, tmin, tmax) {
