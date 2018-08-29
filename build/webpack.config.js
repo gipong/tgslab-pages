@@ -12,6 +12,7 @@ module.exports = {
         path: path.resolve(__dirname, '../docs')
     },
     watch: true,
+    devtool: 'eval',
     module: {
         rules: [
             { test: /\.handlebars$/, loader: "handlebars-loader"},

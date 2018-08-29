@@ -28,11 +28,10 @@
     "handlebars-loader": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^4.3.1",
+    "mapbox-gl": "^0.48.0",
     "mini-css-extract-plugin": "^0.4.1",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8"
   },
-  "dependencies": {
-    "mapbox-gl": "^0.48.0"
-  }
+  "dependencies": {}
 }
