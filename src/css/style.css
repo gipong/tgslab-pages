@@ -32,6 +32,8 @@ body {
 
 .logo {
     width: 130px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
 }
 
 .hr-divider {
@@ -57,6 +59,7 @@ section {
 
 .card {
     margin: 10px;
+    flex: 1 0 20%;
 }
 
 p {
@@ -80,6 +83,14 @@ p {
 
 #navbar {
     transition: all 0.5s ease 0s;
+}
+
+.scroll-nav {
+    background-color: #ffffff;
+}
+
+.scroll-nav .logo {
+    width: 65px;
 }
 
 .nav-link {

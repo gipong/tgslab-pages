@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/gipong/tgslab-pages#readme",
   "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
@@ -29,5 +31,8 @@
     "mini-css-extract-plugin": "^0.4.1",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "mapbox-gl": "^0.48.0"
   }
 }

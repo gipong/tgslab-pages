@@ -8,11 +8,34 @@ import './js/bootstrap.min.js';
 import './js/jquery.easing.min.js';
 // import './js/wow.min.js';
 
+import * as mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+
 $("nav").find("a").click(function(e) {
     e.preventDefault();
     $("html, body").animate({
         scrollTop: $($(this).attr("href")).offset().top - 120
     });
+});
+
+
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ2lwb25nIiwiYSI6ImNpcng2dGhuNjAwOWMydG53NHQ5YmhiNnoifQ.qlZtEANEj-mWdyRqJVC83g';
+let map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v10',
+    center: [120.7, 23.6],
+    zoom: 6
+});
+
+let scrollTopValue = 0;
+$(window).scroll(function() {
+   scrollTopValue = $(window).scrollTop();
+   $('.counter').html(scrollTopValue);
+   let bh = document.getElementsByTagName('canvas')[0].clientHeight;
+   if(scrollTopValue > bh) {
+       $("#navbar").addClass('scroll-nav');
+   } else {
+       $("#navbar").removeClass('scroll-nav');
+   }
 });
 
 $(".nav-link").hover(function() {
