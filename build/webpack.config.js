@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     entry: './src/app.js',
@@ -10,6 +11,7 @@ module.exports = {
         filename: "bundle.js",
         path: path.resolve(__dirname, '../docs')
     },
+    watch: true,
     module: {
         rules: [
             { test: /\.handlebars$/, loader: "handlebars-loader"},
@@ -67,6 +69,11 @@ module.exports = {
         }),
         new CopyWebpackPlugin([{
             from: 'src/assets/', to: 'assets/'
-        }])
+        }]),
+        new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 3002,
+            server: { baseDir: ['docs'] }
+        })
     ]
 };
